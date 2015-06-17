@@ -12,9 +12,16 @@ var App = React.createClass({
     return (
       <div>
         <div>{this.state.text}</div>
-        <Editor text={this.state.text}
+        <Editor
+          tag="h1"
+          text={this.state.text}
           onChange={this.handleChange}
-          options={{buttons: ['bold', 'italic', 'underline']}}/>
+          options={{buttons: ['bold', 'italic', 'underline']}}
+        />
+        <Editor
+          text={this.state.text}
+          onChange={this.handleChange}
+        />
       </div>
     );
   },
