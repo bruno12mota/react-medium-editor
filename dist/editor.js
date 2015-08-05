@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
-var React = require('react');
-var MediumEditor = require('medium-editor');
+var React = require("react");
+var MediumEditor = require("medium-editor");
 
 module.exports = React.createClass({
-  displayName: 'exports',
+  displayName: "exports",
 
   getInitialState: function getInitialState() {
     return {
@@ -14,7 +14,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function getDefaultProps() {
     return {
-      tag: 'div'
+      tag: "div"
     };
   },
 
@@ -23,7 +23,7 @@ module.exports = React.createClass({
 
     var dom = this.getDOMNode();
     this.medium = new MediumEditor(dom, this.props.options);
-    this.medium.subscribe('editableInput', function (e) {
+    this.medium.subscribe("editableInput", function (e) {
       _this._updated = true;
       _this.change(dom.innerHTML);
     });
